@@ -1,0 +1,52 @@
+{%extends "layout.html"%}
+
+{% block body %}
+<br>
+<div class="container px-2 col-lg-5 col-sm-12">
+    <h1 class="text-center">Stroke Prediction Test</h1>
+    <form action="{{url_for('predict_stroke')}}" method="POST">
+        <label class="lb-lg">gender</label>
+        <select class="form-control" name="sex">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select>
+        <label class="lb-lg">Age</label>
+        <input class="form-input" type="text" name="age" placeholder="age e.g. 40-80 " required><br>
+        <label class="lb-lg">hypertension</label>
+        <input class="form-input" type="text" name="hypertension" placeholder="hypertension e.g. 0" required><br>
+        <label class="lb-lg">heart disease</label>
+        <input class="form-input" type="text" name="heart disease" placeholder="heart disease e.g. 0" required><br>
+        <label class="lb-lg">marital status</label>
+        <select class="form-control" name="sex">
+            <option value="0">Married</option>
+            <option value="1">UnMarried</option>
+        </select>
+        <label class="lb-lg">Working Status</label>
+        <select class="form-control" name="sex">
+            <option value="0">Government Job</option>
+            <option value="1">Not Working</option>
+            <option value="2">Private Job</option>
+            <option value="3">Self Employed</option>
+            <option value="4">Children/student</option>
+        </select>
+        <label class="lb-lg">residence</label>
+        <<select class="form-control" name="sex">
+        <option value="0">Rural</option>
+        <option value="1">Urban</option>
+    </select>
+        <label class="lb-lg">glucose level</label>
+        <input class="form-input" type="text" name="glucose level" placeholder="glucose level e.g. 50.00-280.00"
+            required><br>
+        <label class="lb-lg">body mass index</label>
+        <input class="form-input" type="text" name="body mass index" placeholder="BMI e.g. 10.00-100.00" required><br>
+        <label class="lb-lg">smoking status</label>
+        <select class="form-control" name="sex">
+            <option value="0">Unknown</option>
+            <option value="1">formerly smoked</option>
+            <option value="2">never smoked</option>
+            <option value="3">smokes</option>
+        </select>
+        <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+</div>
+{% endblock %}
